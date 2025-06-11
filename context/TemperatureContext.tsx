@@ -30,8 +30,7 @@ const TemperatureContextProvider = ({children}: { children: ReactNode }) => {
         let Longitude_Latitude = null;
         Data = JSON.stringify(location.coords);
         Longitude_Latitude = JSON.parse(Data);
-
-        const URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${Longitude_Latitude["latitude"]}&lon=${Longitude_Latitude["longitude"]}&units=metric&appid=${API_KEY}`;
+        const URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${Longitude_Latitude["latitude"]}&lon=${Longitude_Latitude["longitude"]}&units=metric&appid=${API_KEY}`;
         try {
           const response = await fetch(URL);
           const data = await response.json();

@@ -25,7 +25,6 @@ const RootNavigator = () => {
             screenOptions={{
               headerShown: false,
               tabBarStyle: {
-                height: 70,
                 position: 'absolute',
                 bottom: '2%',
                 left: '3%',
@@ -49,18 +48,19 @@ const RootNavigator = () => {
                   light: 'rgba(256, 256, 256, .9)',
                   dark: BACKGROUND_COLOR
                 }}
-                maxWidth={320} height={85} darkMode={true} {...props}
+                maxWidth={320} height={55} darkMode={true} {...props}
             />}
         >
           {fetchError ?
               <Tab.Screen
                   options={{
+                    title: "Головна",
                     tabBarShowLabel: false,
-                    tabBarIcon: ({focused}: {focused: boolean}) => {
+                    tabBarIcon: ({focused}: { focused: boolean }) => {
                       const c = focused ? ICON_FOCUSED_COLOR : ICON_COLOR;
                       return (
                           <View>
-                            <Feather name="home" size={24} color={c} />
+                            <Feather name="home" size={24} color={c}/>
                           </View>
                       );
                     }
@@ -70,12 +70,13 @@ const RootNavigator = () => {
               />
               : <Tab.Screen
                   options={{
+                    title: "Головна",
                     tabBarShowLabel: false,
-                    tabBarIcon: ({focused}: {focused: boolean}) => {
+                    tabBarIcon: ({focused}: { focused: boolean }) => {
                       const c = focused ? ICON_FOCUSED_COLOR : ICON_COLOR;
                       return (
                           <View>
-                            <Feather name="home" size={24} color={c} />
+                            <Feather name="home" size={24} color={c}/>
                           </View>
                       );
                     }
@@ -86,12 +87,13 @@ const RootNavigator = () => {
           }
           <Tab.Screen
               options={{
+                title: "Пошук",
                 tabBarShowLabel: false,
-                tabBarIcon: ({focused}: {focused: boolean}) => {
+                tabBarIcon: ({focused}: { focused: boolean }) => {
                   const c = focused ? ICON_FOCUSED_COLOR : ICON_COLOR;
                   return (
                       <View>
-                        <Feather name="search" size={24} color={c} />
+                        <Feather name="search" size={24} color={c}/>
                       </View>
                   );
                 }
