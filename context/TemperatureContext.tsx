@@ -14,7 +14,7 @@ export const useTemp = () => {
 };
 
 const TemperatureContextProvider = ({children}: { children: ReactNode }) => {
-  const [tempMode, setTempMode] = useState(false);
+  const [tempMode] = useState(false);
   const [weatherData, setWeatherData] = useState(null);
   const [stateWeatherData, setStateWeatherData] = useState(null);
   const [fetchError, setFetchError] = useState(false);
@@ -26,10 +26,8 @@ const TemperatureContextProvider = ({children}: { children: ReactNode }) => {
         alert("Дозвіл обов'язковий");
       } else {
         let location = await Location.getCurrentPositionAsync({});
-        let Data = 'Зачекайте...';
-        let Longitude_Latitude = null;
-        Data = JSON.stringify(location.coords);
-        Longitude_Latitude = JSON.parse(Data);
+        const Data = JSON.stringify(location.coords);
+        const Longitude_Latitude = JSON.parse(Data);
         const URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${Longitude_Latitude["latitude"]}&lon=${Longitude_Latitude["longitude"]}&units=metric&appid=${API_KEY}`;
         try {
           const response = await fetch(URL);
