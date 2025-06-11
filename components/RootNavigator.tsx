@@ -56,11 +56,11 @@ const RootNavigator = () => {
               <Tab.Screen
                   options={{
                     tabBarShowLabel: false,
-                    tabBarIcon: ({color, focused}: {color: string; focused: boolean}) => {
+                    tabBarIcon: ({focused}: {focused: boolean}) => {
                       const c = focused ? ICON_FOCUSED_COLOR : ICON_COLOR;
                       return (
                           <View>
-                            <Feather name="home" size={24} color={color} />
+                            <Feather name="home" size={24} color={c} />
                           </View>
                       );
                     }
@@ -71,11 +71,11 @@ const RootNavigator = () => {
               : <Tab.Screen
                   options={{
                     tabBarShowLabel: false,
-                    tabBarIcon: ({color, focused}: {color: string; focused: boolean}) => {
+                    tabBarIcon: ({focused}: {focused: boolean}) => {
                       const c = focused ? ICON_FOCUSED_COLOR : ICON_COLOR;
                       return (
                           <View>
-                            <Feather name="home" size={24} color={color} />
+                            <Feather name="home" size={24} color={c} />
                           </View>
                       );
                     }
@@ -87,11 +87,11 @@ const RootNavigator = () => {
           <Tab.Screen
               options={{
                 tabBarShowLabel: false,
-                tabBarIcon: ({color, focused}: {color: string; focused: boolean}) => {
+                tabBarIcon: ({focused}: {focused: boolean}) => {
                   const c = focused ? ICON_FOCUSED_COLOR : ICON_COLOR;
                   return (
                       <View>
-                        <Feather name="search" size={24} color={color} />
+                        <Feather name="search" size={24} color={c} />
                       </View>
                   );
                 }
